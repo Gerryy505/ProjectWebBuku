@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHive Home</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+<!-- ================= BACKGROUND DEKORASI ================= -->
+
+<div class="bg-circle"></div>
+
+<div class="bg-leaf">
+  🌿
+</div>
+
+<div class="dots dots-left"></div>
+<div class="dots dots-right"></div>
+
+<!-- CEK LOGIN -->
+<script>
+if (!localStorage.getItem("isLogin")) {
+  window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+
+  <!-- ================= SIDEBAR ================= -->
+  <div class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <i class="fa-solid fa-book-open"></i>
+      <h2>BookHive</h2>
+    </div>
+
+    <!-- MENU -->
+    <ul class="menu">
+
+      <li class="active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </li>
+
+      <li onclick="window.location.href='library.html'">
+        <i class="fa-solid fa-book"></i>
+        <span>Library</span>
+      </li>
+
+      <li>
+        <i class="fa-regular fa-heart"></i>
+        <span>Favorites</span>
+      </li>
+
+      <li>
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </li>
+
+      <li>
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+      </li>
+
+    </ul>
+
+    <!-- LOGOUT -->
+    <div class="logout" onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Logout</span>
+    </div>
+
+  </div>
+
+  <!-- ================= MAIN ================= -->
+  <div class="main">
+
+    <!-- ================= TOPBAR ================= -->
+    <div class="topbar">
+
+      <!-- SEARCH -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text"
+        placeholder="Search books, authors, categories...">
+      </div>
+
+      <!-- USER -->
+      <div class="top-right">
+
+        <i class="fa-regular fa-bell bell"></i>
+
+        <div class="user">
+          <img src="https://i.pravatar.cc/50" alt="">
+          <span id="username"></span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= GREETING ================= -->
+    <div class="greeting">
+      <h1 id="greeting"></h1>
+      <p>Ready for your next great read?</p>
+    </div>
+
+    <!-- ================= CONTINUE READING ================= -->
+    <div class="section-title">
+      <h2>Continue Reading</h2>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- CARD BUKU -->
+    <div class="book-container">
+
+      <!-- BOOK -->
+      <div class="book-card">
+
+        <img src="image/Image 2026-05-07 at 07.34.40.jpeg">
+
+        <div class="book-info">
+          <h4>Senja Bersama Ayah</h4>
+          <p>rahayyupp</p>
+
+          <div class="progress-bar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOOK -->
+      <div class="book-card">
+
+        <img src="https://covers.openlibrary.org/b/id/11153291-L.jpg">
+
+        <div class="book-info">
+          <h4>Atomic Habits</h4>
+          <p>James Clear</p>
+
+          <div class="progress-bar">
+            <div class="progress" style="width:85%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOOK -->
+      <div class="book-card">
+
+        <img src="https://covers.openlibrary.org/b/id/10594755-L.jpg">
+
+        <div class="book-info">
+          <h4>The Alchemist</h4>
+          <p>Paulo Coelho</p>
+
+          <div class="progress-bar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOOK -->
+      <div class="book-card">
+
+        <img src="https://covers.openlibrary.org/b/id/7222246-L.jpg">
+
+        <div class="book-info">
+          <h4>1984</h4>
+          <p>George Orwell</p>
+
+          <div class="progress-bar">
+            <div class="progress" style="width:20%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= RECOMMENDED ================= -->
+    <div class="recommended-top">
+
+      <div class="section-title">
+        <h2>Recommended for You</h2>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <span class="see-all">See all</span>
+
+    </div>
+
+    <!-- RECOMMENDED BOOK -->
+    <div class="recommend-container">
+
+      <div class="recommend-card">
+        <img src="https://covers.openlibrary.org/b/id/12687884-L.jpg">
+      </div>
+
+      <div class="recommend-card">
+        <img src="https://covers.openlibrary.org/b/id/10521270-L.jpg">
+      </div>
+
+      <div class="recommend-card">
+        <img src="https://covers.openlibrary.org/b/id/10958354-L.jpg">
+      </div>
+
+      <div class="recommend-card">
+        <img src="https://covers.openlibrary.org/b/id/12883569-L.jpg">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// AMBIL NAMA USER
+let user = localStorage.getItem("user") || "Alex";
+
+// TAMPILKAN USER
+document.getElementById("username").innerText = "Hi, " + user;
+
+document.getElementById("greeting").innerText =
+"Good morning, " + user + " 👋";
+
+// LOGOUT
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+
+</script>
+
+</body>
+</html>

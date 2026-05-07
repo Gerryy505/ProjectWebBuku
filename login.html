@@ -3,69 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>BookHive Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="css/login.css">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
 
-  <!-- LEFT SIDE -->
+  <!-- LEFT -->
   <div class="left">
-    <div class="brand">
-      <div class="logo">📖</div>
-      <h1>BookHive</h1>
-      <p>Discover · Read · Grow</p>
-    </div>
+    <div class="logo">📖</div>
+    <h1>BookHive</h1>
+    <p>Discover · Read · Grow</p>
 
-    <div class="illustration">
-      <img src="https://cdn-icons-png.flaticon.com/512/6195/6195699.png" alt="reading">
-    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/6195/6195699.png" alt="">
   </div>
 
-  <!-- RIGHT SIDE -->
+  <!-- RIGHT -->
   <div class="right">
-    <div class="form-box">
+    <div class="card">
+
       <h2>Welcome back</h2>
       <span>Login to continue your reading journey</span>
 
-      <form>
-        <div class="input-group">
-          <input type="email" placeholder="Email">
-        </div>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
 
-        <div class="input-group">
-          <input type="password" placeholder="Password">
-        </div>
+      <div class="option">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
 
-        <div class="options">
-          <label><input type="checkbox"> Remember me</label>
-          <a href="#">Forgot password?</a>
-        </div>
+      <button onclick="login()">Login</button>
 
-        <button class="btn-login">Login</button>
+      <div class="divider">or continue with</div>
 
-        <div class="divider">
-          <span>or continue with</span>
-        </div>
+      <div class="social">
+        <button>Google</button>
+        <button>Apple</button>
+      </div>
 
-        <div class="social">
-          <button class="google">Google</button>
-          <button class="apple">Apple</button>
-        </div>
+      <p class="signup">
+        Don't have an account? <a href="#">Sign up</a>
+      </p>
 
-        <p class="signup">
-          Don't have an account? <a href="#">Sign up</a>
-        </p>
-      </form>
     </div>
   </div>
 
 </div>
+
+<script>
+function login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  if(email === "" || password === ""){
+    alert("Isi email dan password!");
+    return;
+  }
+
+  localStorage.setItem("isLogin", "true");
+  localStorage.setItem("user", email);
+
+  window.location.href = "home.html";
+}
+</script>
 
 </body>
 </html>
